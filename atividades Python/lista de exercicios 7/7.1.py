@@ -68,7 +68,6 @@ while True:
                 print("A lista está vazia.")
             else:
                 print("Itens ordenados:")
-                # Conjuntos não têm ordem, então convertemos para lista para ordenar
                 lista_ordenada = sorted(compras)
                 for item in lista_ordenada:
                     print(f"- {item}")
@@ -92,10 +91,6 @@ while True:
         case "G":
             try:
                 with open("lista.txt", "r", encoding="utf-8") as arquivo:
-                    # Lê as linhas, remove o \n e adiciona ao conjunto
-                    # Isso limpa a lista atual ou adiciona a ela? 
-                    # Geralmente ler de arquivo para um "set" de compras costuma substituir ou mesclar.
-                    # Vou optar por adicionar à lista atual.
                     for linha in arquivo:
                         compras.add(linha.strip())
                 print("Lista carregada de 'lista.txt' com sucesso.")
