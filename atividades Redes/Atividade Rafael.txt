@@ -1,0 +1,42 @@
+Atividade
+
+1. Qual é o nome do node Proxmox utilizado pela turma? proxmox1
+
+2. Quantos processadores/cores estão disponíveis no servidor? 8
+
+3. Qual é a quantidade de memória RAM disponível? 16 GB
+
+4. Quais storages estão disponíveis? 2, local & local-lvm
+
+5. Qual a diferença entre o servidor físico e uma VM apresentada na interface do Proxmox? A diferença é o tipo de hospedagem, o servidor físico é por estrutura hosted, ou seja, um simulador no PC, já o proxmos é uma é uma hospedagem bare metal, ou seja, no próprio PC
+
+6. Qual endereço IP foi atribuído à sua VM? 103
+
+7. Qual é o gateway configurado? 192.168.180.1
+
+8. Qual é o hostname da máquina? EduardoFrantz213823
+
+9. A VM consegue acessar a Internet? Comprove realizando um teste. Não
+
+10. Quantos CPUs o Proxmox disponibilizou para a VM? 1
+
+11. Quantos CPUs o sistema operacional identificou? 1
+
+12. Qual quantidade de memória RAM foi configurada? 512
+
+13. Qual tamanho de disco foi configurado? 20 GiB
+
+14. Explique por que o sistema operacional acredita estar instalado em um computador físico, mesmo estando dentro de uma VM.
+Por causa da virtualização de hardware, coordenada pelo Hipervisor KVM integrado ao proxmox.
+
+15. Qual é a principal vantagem de utilizar virtualização em um servidor?
+Eficiência na utilização de recursos através da consolidação de servidores.
+
+16. Qual a diferença entre uma VM e um computador físico?
+Um computador físico é composto por peças de hardware, enquanto uma VM é um computador simulado por software que compartilha o hardware de um host.
+
+17. Por que uma empresa pode preferir utilizar Proxmox em vez de instalar vários servidores físicos?
+Porque ele funciona como um centralizador de recursos e custos, transformando gastos complexos de hardware em gerenciamento simples por software.
+
+18. Qual é a principal diferença entre o uso do VirtualBox e do Proxmox?
+Um é um servidor virtual hospedeiro e o outro é dentro da própria máquina, bare metal.
