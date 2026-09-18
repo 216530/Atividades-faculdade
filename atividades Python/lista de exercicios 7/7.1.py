@@ -69,7 +69,7 @@ while True:
             else:
                 print("Itens ordenados:")
                 # Conjuntos não têm ordem, então convertemos para lista para ordenar
-                lista_ordenada = sorted(list(compras))
+                lista_ordenada = sorted(compras)
                 for item in lista_ordenada:
                     print(f"- {item}")
         
@@ -86,7 +86,7 @@ while True:
                     for item in compras:
                         arquivo.write(item + "\n")
                 print("Lista gravada em 'lista.txt' com sucesso.")
-            except Exception as e:
+            except Exception as e:  
                 print(f"Erro ao gravar arquivo: {e}")
         
         case "G":
