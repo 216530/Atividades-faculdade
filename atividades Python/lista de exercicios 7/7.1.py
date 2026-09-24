@@ -85,7 +85,7 @@ while True:
                     for item in compras:
                         arquivo.write(item + "\n")
                 print("Lista gravada em 'lista.txt' com sucesso.")
-            except Exception as e:  
+            except Exception as e:  # noqa: BLE001
                 print(f"Erro ao gravar arquivo: {e}")
         
         case "G":
@@ -96,7 +96,7 @@ while True:
                 print("Lista carregada de 'lista.txt' com sucesso.")
             except FileNotFoundError:
                 print("Erro: O arquivo 'lista.txt' não existe.")
-            except Exception as e:
+            except Exception as e:  # noqa: BLE001
                 print(f"Erro ao ler arquivo: {e}")
         
         case _:
