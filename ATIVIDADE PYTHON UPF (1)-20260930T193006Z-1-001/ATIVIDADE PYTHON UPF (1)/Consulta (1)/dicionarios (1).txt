@@ -1,0 +1,58 @@
+======================================================================
+GUIA DE CONSULTA: DICIONÁRIOS (dict) - PYTHON
+======================================================================
+Estruturas de Chave:Valor. Chaves são únicas; valores podem duplicar.
+
+1. CRIAÇÃO E ACESSO
+----------------------------------------------------------------------
+d = {'nome': 'Ana', 'idade': 25}
+d['nome']              -> 'Ana' (Dá erro se a chave não existir)
+d.get('altura', 1.70)  -> Retorna 1.70 se 'altura' não existir (Não dá erro!)
+
+2. ADIÇÃO E MODIFICAÇÃO
+----------------------------------------------------------------------
+d['cidade'] = 'SP'     -> Adiciona nova chave se não existir, ou atualiza se já existir
+d.update({'idade': 26, 'sexo': 'F'}) -> Atualiza/adiciona múltiplos pares
+
+3. REMOÇÃO
+----------------------------------------------------------------------
+del d['idade']         -> Deleta a chave 'idade'
+d.pop('nome')          -> Remove e retorna o valor da chave 'nome'
+d.popitem()            -> Remove e retorna o último par adicionado como uma tupla
+d.clear()              -> Limpa o dicionário inteiro
+
+4. VISÕES DO DICIONÁRIO (Iteráveis)
+----------------------------------------------------------------------
+d.keys()               -> Retorna todas as chaves
+d.values()             -> Retorna todos os valores
+d.items()              -> Retorna tuplas de (chave, valor) -> ex: [('nome', 'Ana')]
+
+5. TRUQUES ÚTEIS
+----------------------------------------------------------------------
+# Alterar uma chave:
+d['novo_nome'] = d.pop('nome_antigo')
+
+# Inverter chaves e valores:
+invertido = {valor: chave for chave, valor in d.items()}
+
+6. DICIONÁRIOS ANINHADOS (Dicionário dentro de Dicionário)
+----------------------------------------------------------------------
+escola = {
+    'aluno1': {'nome': 'Ana', 'nota': 9.5},
+    'aluno2': {'nome': 'Rui', 'nota': 8.0}
+}
+
+# Acesso em cadeia:
+escola['aluno1']['nome']  -> 'Ana'
+
+# Modificação/Criação:
+escola['aluno1']['nota'] = 10.0      -> Atualiza a nota da Ana
+escola['aluno2']['Faltas'] = 2       -> Cria nova chave dentro do Rui
+
+# Remoção:
+del escola['aluno2']['nota']         -> Deleta apenas a nota do Rui
+
+for cod_aluno, info in usuarios.items():
+    print(f"Código: {cod_aluno}")
+    print(f"Nome do Aluno: {info['nome']}")
+======================================================================

@@ -1,0 +1,51 @@
+======================================================================
+GUIA DE CONSULTA: STRINGS (str) - PYTHON
+======================================================================
+Imutáveis, ordenadas e indexadas.
+
+1. CRIAÇÃO E ACESSO
+----------------------------------------------------------------------
+s = "Python"
+s[0]        -> 'P' (Primeiro caractere)
+s[-1]       -> 'n' (Último caractere)
+s[1:4]      -> 'yth' (Fatiamento: índice 1 até 3)
+s[::-1]     -> 'nohtyP' (Inverte a string)
+
+2. MÉTODOS DE MODIFICAÇÃO (Retornam uma nova string)
+----------------------------------------------------------------------
+s.upper()         -> "PYTHON" (Tudo em maiúsculo)
+s.lower()         -> "python" (Tudo em minúsculo)
+s.capitalize()    -> "Python" (Primeira letra em maiúsculo)
+s.title()         -> "Python" (Primeira letra de cada palavra em maiúsculo)
+s.strip()         -> Remove espaços em branco do início e do fim
+s.replace(a, b)   -> Substitui todas as ocorrências de 'a' por 'b'
+
+3. DIVISÃO E JUNÇÃO
+----------------------------------------------------------------------
+s.split(',')      -> Divide a string por vírgulas, retornando uma Lista
+"-".join(['a','b']) -> Junta elementos de uma lista usando '-' -> "a-b"
+
+4. BUSCA E VERIFICAÇÃO
+----------------------------------------------------------------------
+s.find('y')       -> Retorna o índice da primeira ocorrência (ou -1 se não achar)
+s.count('o')      -> Conta quantas vezes 'o' aparece na string
+s.startswith('Py')-> Retorna True ou False
+s.endswith('on')  -> Retorna True ou False
+'y' in s          -> Retorna True se o caractere existir na string
+
+5. TESTES DE CONTEÚDO
+----------------------------------------------------------------------
+s.isalpha()       -> True se for apenas letras
+s.isdigit()       -> True se for apenas números
+s.isalnum()       -> True se for apenas letras e números
+
+6. OUTROS(INVERSÃO)
+----------------------------------------------------------------------
+s = "radar"
+
+# Inverter a string usando fatiamento [inicio:fim:passo]
+invertida = s[::-1]  -> "radar"
+
+# Verificar se é Palíndromo (ignora maiúsculas/minúsculas)
+eh_palindromo = s.lower() == s.lower()[::-1]  -> True
+======================================================================

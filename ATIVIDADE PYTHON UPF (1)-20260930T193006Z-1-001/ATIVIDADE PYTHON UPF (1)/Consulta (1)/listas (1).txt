@@ -1,0 +1,40 @@
+======================================================================
+GUIA DE CONSULTA: LISTAS (list) - PYTHON
+======================================================================
+Mutáveis, ordenadas e aceitam duplicatas.
+
+1. CRIAÇÃO E ACESSO
+----------------------------------------------------------------------
+lista = [10, 20, 30, 40]
+lista[0]          -> 10 (Primeiro elemento)
+lista[-1]         -> 40 (Último elemento)
+lista[1:3]        -> [20, 30] (Fatiamento)
+
+2. ADIÇÃO DE ELEMENTOS
+----------------------------------------------------------------------
+lista.append(50)       -> Adiciona 50 ao FINAL da lista -> [10, 20, 30, 40, 50]
+lista.insert(1, 15)    -> Insere 15 no ÍNDICE 1          -> [10, 15, 20, 30, 40]
+lista.extend([5, 6])   -> Adiciona múltiplos elementos ao final
+
+3. REMOÇÃO DE ELEMENTOS
+----------------------------------------------------------------------
+lista.remove(20)       -> Remove a PRIMEIRA ocorrência do valor 20 (Dá erro se não existir)
+lista.pop()            -> Remove e retorna o ÚLTIMO elemento
+lista.pop(0)           -> Remove e retorna o elemento do ÍNDICE 0
+lista.clear()          -> Remove TODOS os elementos da lista
+del lista[1]           -> Deleta o elemento no índice 1
+
+4. ORDENAÇÃO E UTILITÁRIOS
+----------------------------------------------------------------------
+lista.sort()           -> Ordena a lista original em ordem crescente
+lista.sort(reverse=True)-> Ordena a lista original em ordem decrescente
+lista.reverse()        -> Inverte a ordem dos elementos da lista original
+lista.index(30)        -> Retorna o índice do valor 30
+lista.count(10)        -> Conta quantas vezes o valor 10 aparece
+
+5. FUNÇÕES GLOBAIS ÚTEIS COM LISTAS
+----------------------------------------------------------------------
+len(lista)             -> Quantidade de elementos
+sum(lista)             -> Soma todos os elementos (se numéricos)
+min(lista) / max(lista)-> Menor e maior valor
+======================================================================

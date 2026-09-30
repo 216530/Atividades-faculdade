@@ -1,0 +1,53 @@
+======================================================================
+GUIA DE CONSULTA: ESTRUTURA DE REPETIÇÃO - WHILE - PYTHON
+======================================================================
+Usado quando você NÃO sabe quantas vezes vai repetir. O bloco roda 
+ENQUANTO uma condição for Verdadeira (True).
+
+1. ESTRUTURA BÁSICA E CONTADORES
+----------------------------------------------------------------------
+⚠️ ATENÇÃO: Você precisa atualizar a variável da condição dentro 
+do bloco, senão o loop fica preso em um "Loop Infinito".
+
+contador = 0
+while contador < 3:
+    print(contador)
+    contador += 1 # Importante! Mesmo que: contador = contador + 1
+# Imprime: 0, 1, 2
+
+2. PADRÃO "LOOP INFINITO CONTROLADO" (Muito comum)
+----------------------------------------------------------------------
+Usado para menus interativos ou para validar dados de entrada. Fica rodando 
+com 'while True' até encontrar um 'break'.
+
+while True:
+    resposta = input("Digite 'sair' para encerrar: ")
+    if resposta == 'sair':
+        break # Única forma de fechar o loop
+    print("Você digitou:", resposta)
+
+3. VALIDAÇÃO DE ENTRADAS (Exemplo clássico de prova)
+----------------------------------------------------------------------
+Forçar o usuário a digitar um dado correto antes de avançar o código.
+
+nota = float(input("Digite uma nota de 0 a 10: "))
+
+while nota < 0 or nota > 10:
+    print("Nota inválida!")
+    nota = float(input("Digite novamente (0 a 10): "))
+
+print("Nota salva com sucesso:", nota)
+
+4. BREAK E CONTINUE NO WHILE
+----------------------------------------------------------------------
+Funcionam igual ao 'for', mas cuidado com o 'continue' no 'while': 
+se você esquecer de atualizar o contador ANTES do 'continue', criará 
+um loop infinito acidentalmente!
+
+i = 0
+while i < 5:
+    i += 1
+    if i == 3:
+        continue # Pula o print, mas o 'i' já aumentou lá em cima
+    print(i) # Imprime: 1, 2, 4, 5
+======================================================================

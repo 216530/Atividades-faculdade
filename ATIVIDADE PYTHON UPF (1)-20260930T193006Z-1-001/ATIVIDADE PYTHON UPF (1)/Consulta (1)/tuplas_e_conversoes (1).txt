@@ -1,0 +1,35 @@
+======================================================================
+GUIA DE CONSULTA: TUPLAS (tuple) E CONVERSÕES - PYTHON
+======================================================================
+
+PARTE 1: TUPLAS
+----------------------------------------------------------------------
+Imutáveis (não podem ser alteradas após criadas) e ordenadas.
+
+t = (1, 2, 2, 3)
+t[0]         -> 1 (Acesso por índice)
+t.count(2)   -> 2 (Conta ocorrências do valor 2)
+t.index(3)   -> 3 (Retorna o índice do valor 3)
+
+*Nota: Para criar tupla de um único elemento, use vírgula: t = (5,)*
+
+
+PARTE 2: CONVERSÕES DE TIPOS (Typecasting)
+----------------------------------------------------------------------
+Remover duplicados de uma lista:
+lista = [1, 2, 2, 3]
+sem_duplicados = list(set(lista))     -> [1, 2, 3]
+
+Converter lista de tuplas em dicionário:
+pares = [('a', 1), ('b', 2)]
+dicionario = dict(pares)              -> {'a': 1, 'b': 2}
+
+Criar dicionário a partir de chaves de um conjunto/lista:
+chaves = {'azul', 'verde'}
+d = dict.fromkeys(chaves, 0)          -> {'azul': 0, 'verde': 0}
+
+Dicionário para conjunto:
+d = {'a': 1, 'b': 2}
+set(d)                                -> {'a', 'b'} (Pega apenas as chaves)
+set(d.values())                       -> {1, 2} (Pega os valores)
+======================================================================

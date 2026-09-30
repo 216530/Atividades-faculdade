@@ -1,0 +1,76 @@
+======================================================================
+GUIA DE CONSULTA: MANIPULAÇÃO DE ARQUIVOS (I/O) - PYTHON
+======================================================================
+Leitura e escrita de arquivos de texto (.txt).
+
+1. A REGRA DE OURO: SEMPRE USE 'with'
+----------------------------------------------------------------------
+O comando 'with' garante que o arquivo seja fechado automaticamente, 
+mesmo se ocorrer um erro no código. Evita corromper dados.
+
+Estrutura básica:
+with open('nome_do_arquivo.txt', 'modo', encoding='utf-8') as arquivo:
+    # comandos de leitura ou escrita aqui dentro
+
+*Nota: Sempre use encoding='utf-8' para aceitar acentos e cedilha.*
+
+2. OS PRINCIPAIS MODOS DE ABERTURA ('modo')
+----------------------------------------------------------------------
+'r'  -> Read (Leitura). Modo padrão. O arquivo DEVE existir, ou dá erro.
+'w'  -> Write (Escrita). Cria o arquivo se não existir. 
+        ⚠️ ATENÇÃO: Se o arquivo já existir, ele APAGA tudo e escreve do zero!
+'a'  -> Append (Anexar). Cria o arquivo se não existir.
+        Se já existir, ele adiciona o novo texto no FINAL do arquivo (preserva o antigo).
+
+3. COMANDOS DE LEITURA (Modo 'r')
+----------------------------------------------------------------------
+Considere um arquivo fictício com algumas linhas de texto:
+
+# Opção 1: arquivo.read() -> Lê o arquivo INTEIRO como uma única string.
+with open('dados.txt', 'r', encoding='utf-8') as arquivo:
+    conteudo = arquivo.read()
+
+# Opção 2: arquivo.readline() -> Lê apenas UMA linha por vez.
+with open('dados.txt', 'r', encoding='utf-8') as arquivo:
+    linha1 = arquivo.readline() # Lê a 1ª linha (inclui o \n do fim)
+    linha2 = arquivo.readline() # Lê a 2ª linha
+
+# Opção 3: arquivo.readlines() -> Lê tudo e gera uma LISTA de strings.
+with open('dados.txt', 'r', encoding='utf-8') as arquivo:
+    lista_linhas = arquivo.readlines() 
+    # Saída: ['Linha 1\n', 'Linha 2\n', 'Linha 3']
+
+# Opção 4: Iterar direto no arquivo (A melhor para loops 'for')
+with open('dados.txt', 'r', encoding='utf-8') as arquivo:
+    for linha in arquivo:
+        print(linha.strip()) # .strip() remove o '\n' invisível do final
+
+4. COMANDOS DE ESCRITA (Modos 'w' e 'a')
+----------------------------------------------------------------------
+# Exemplo 1: Sobrescrevendo/Criando do zero ('w')
+with open('novo.txt', 'w', encoding='utf-8') as arquivo:
+    arquivo.write("Primeira linha.\n") # \n pula para a próxima linha
+    arquivo.write("Segunda linha.")
+
+# Exemplo 2: Adicionando texto sem apagar o anterior ('a')
+with open('novo.txt', 'a', encoding='utf-8') as arquivo:
+    arquivo.write("\nTerceira linha adicionada ao final.")
+
+# Exemplo 3: Escrevendo uma lista de strings de uma vez (.writelines)
+linhas_lista = ["Linha A\n", "Linha B\n"]
+with open('novo.txt', 'w', encoding='utf-8') as arquivo:
+    arquivo.writelines(linhas_lista)
+
+5. ATENÇÃO
+----------------------------------------------------------------------
+- O método `.write()` só aceita STRINGS. Se quiser salvar um número, use str():
+  arquivo.write(str(10)) 
+
+- Cuidado com a quebra de linha: `\n`. Se você não colocar `\n` no final 
+  do `.write()`, o próximo texto adicionado ficará colado na mesma linha.
+
+- Verificar se um arquivo existe antes de abrir (evita que o programa trave):
+  import os
+  if os.path.exists('dados.txt'):
+      # código para abrir o arquivo
+======================================================================

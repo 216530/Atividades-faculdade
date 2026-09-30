@@ -1,0 +1,49 @@
+======================================================================
+GUIA DE CONSULTA: TRATAMENTO DE ERROS (TRY / EXCEPT) - PYTHON
+======================================================================
+Usado para capturar erros (exceções) e evitar que o programa crashe.
+
+1. ESTRUTURA BÁSICA
+----------------------------------------------------------------------
+try:
+    # Código que pode gerar um erro (perigoso)
+    resultado = 10 / int(input("Divisor: "))
+except:
+    # Código executado SE ocorrer QUALQUER erro no try
+    print("Ocorreu um erro no cálculo!")
+
+2. TRATANDO ERROS ESPECÍFICOS (Recomendado)
+----------------------------------------------------------------------
+try:
+    num = int(input("Digite um número: "))
+    print(100 / num)
+except ValueError:
+    print("Erro: Tu precisas digitar um número válido!")
+except ZeroDivisionError:
+    print("Erro: Não podes dividir por zero!")
+except Exception as erro:
+    # Captura qualquer outro erro e guarda a mensagem dele na variável 'erro'
+    print(f"Ocorreu um erro inesperado: {erro}")
+
+3. ESTRUTURA COMPLETA (try, except, else, finally)
+----------------------------------------------------------------------
+try:
+    print("Tentando realizar a operação...")
+    # Código aqui
+except:
+    print("Deu erro!")
+else:
+    print("Sucesso! Este bloco SÓ roda se o 'try' NÃO der erro.")
+finally:
+    print("Sempre roda! Roda havendo erro ou não (Útil para fechar arquivos).")
+
+4. OS ERROS MAIS COMUNS (Principais Exceções)
+----------------------------------------------------------------------
+- ValueError: Falha na conversão de tipos (ex: int("texto"))
+- ZeroDivisionError: Tentativa de dividir qualquer número por 0.
+- TypeError: Operação com tipo de dado errado (ex: "texto" + 5)
+- IndexError: Tentativa de aceder a um índice que não existe numa lista.
+- KeyError: Tentativa de aceder a uma chave que não existe num dicionário.
+- FileNotFoundError: Tentar abrir um ficheiro que não existe no PC.
+- NameError: Usar uma variável ou função que não foi definida/criada.
+======================================================================

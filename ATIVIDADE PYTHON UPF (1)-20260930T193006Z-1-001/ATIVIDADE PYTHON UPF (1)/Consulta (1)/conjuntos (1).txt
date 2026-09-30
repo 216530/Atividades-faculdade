@@ -1,0 +1,34 @@
+======================================================================
+GUIA DE CONSULTA: CONJUNTOS (set) - PYTHON
+======================================================================
+Não ordenados, não indexados, NÃO aceitam elementos duplicados.
+
+1. CRIAÇÃO
+----------------------------------------------------------------------
+c = {1, 2, 3}
+vazio = set()          -> ATENÇÃO: {} cria um dicionário, use set() para conjunto vazio
+
+2. ADIÇÃO E REMOÇÃO
+----------------------------------------------------------------------
+c.add(4)               -> Adiciona o elemento 4
+c.remove(2)            -> Remove o elemento 2 (Dá erro se o elemento não existir)
+c.discard(2)           -> Remove o elemento 2 (NÃO dá erro se não existir)
+c.pop()                -> Remove e retorna um elemento aleatório
+c.clear()              -> Limpa o conjunto
+
+3. OPERAÇÕES MATEMÁTICAS DE CONJUNTOS
+----------------------------------------------------------------------
+a = {1, 2, 3}
+b = {3, 4, 5}
+
+a | b  ou  a.union(b)        -> União: {1, 2, 3, 4, 5}
+a & b  ou  a.intersection(b) -> Interseção: {3}
+a - b  ou  a.difference(b)   -> Diferença (o que tem em a e não em b): {1, 2}
+a ^ b  ou  a.symmetric_difference(b) -> Elementos que estão em a ou b, mas NÃO em ambos: {1, 2, 4, 5}
+
+4. COMPARAÇÕES DE CONJUNTOS (Retornam True/False)
+----------------------------------------------------------------------
+a.issubset(b)          -> True se 'a' for subconjunto de 'b'
+a.issuperset(b)        -> True se 'a' contiver todos os elementos de 'b'
+a.isdisjoint(b)        -> True se 'a' e 'b' não tiverem NENHUM elemento em comum
+======================================================================
