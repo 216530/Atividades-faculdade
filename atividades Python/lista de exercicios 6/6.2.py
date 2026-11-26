@@ -9,3 +9,5 @@ while len(numeros) < 10 :
         print("valor digitado não é numerico!")
 numeros.reverse()
 print(numeros)
+
+
